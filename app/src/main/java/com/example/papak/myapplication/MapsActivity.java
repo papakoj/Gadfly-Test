@@ -24,6 +24,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        //
     }
 
 
@@ -52,6 +53,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Zoom in, animating the camera.
         googleMap.animateCamera(CameraUpdateFactory.zoomIn());
         // Zoom out to zoom level 10, animating with a duration of 2 seconds.
-        googleMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
+        googleMap.animateCamera(CameraUpdateFactory.zoomTo(15), 20000, null);
     }
 }
