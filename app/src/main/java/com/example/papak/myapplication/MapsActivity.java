@@ -1,13 +1,14 @@
 package com.example.papak.myapplication;
 
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -24,7 +25,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        //
     }
 
 
@@ -53,6 +53,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Zoom in, animating the camera.
         googleMap.animateCamera(CameraUpdateFactory.zoomIn());
         // Zoom out to zoom level 10, animating with a duration of 2 seconds.
-        googleMap.animateCamera(CameraUpdateFactory.zoomTo(15), 20000, null);
+        googleMap.animateCamera(CameraUpdateFactory.zoomTo(15), 2000, null);
+
+        LatLngBounds mapLimits = new LatLngBounds(
+                new LatLng(Lat - 0.05, Lng - 0.05), new LatLng(Lat + 0.05, Lng + 0.05));
+
+        mMap.setLatLngBoundsForCameraTarget(mapLimits);
+
     }
 }

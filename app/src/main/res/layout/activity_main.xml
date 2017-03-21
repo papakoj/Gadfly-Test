@@ -11,9 +11,10 @@
     tools:context="com.example.papak.myapplication.MainActivity">
 
     <ImageView
+        android:contentDescription="Gadfly Logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/gadfly1"
         android:layout_centerHorizontal="true"
         android:id="@+id/logo"
         android:layout_margin="14dp"/>
@@ -23,6 +24,10 @@
         android:layout_height="wrap_content"
         android:hint="Enter your address here."
         android:layout_centerInParent="true"
+        android:layout_below="@id/logo"
+        android:imeOptions="actionDone"
+        android:lines="1"
+
         android:id="@+id/addressfield" />
     <Button
         android:layout_width="wrap_content"
@@ -32,4 +37,13 @@
         android:text="@string/submit_button"
         android:id="@+id/submitButton"
         android:onClick="clickAction"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/submitButton"
+        android:layout_centerHorizontal="true"
+        android:text="WebsiteLookup"
+        android:id="@+id/webButton"
+        android:onClick="clickWeb"/>
 </RelativeLayout>

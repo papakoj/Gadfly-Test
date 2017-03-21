@@ -9,10 +9,9 @@
         android:textSize="30sp"
         android:id="@+id/DISPLAYADD" />
 
-    <com.google.android.gms.maps.MapView
+    <WebView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/mapView"/>
-        <!--android:/>-->
+        android:layout_height="match_parent"
+        android:id="@+id/webView"/>
 
 </LinearLayout>
