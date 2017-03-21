@@ -125,6 +125,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void clickAdapt(View v) {
+        final Intent intent = new Intent(getApplicationContext(), RepresentativesDisplay.class);
+        startActivity(intent);
+    }
+
 
 
 }
