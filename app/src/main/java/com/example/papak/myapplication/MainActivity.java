@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void clickAction(View v) {
+    public void clickAction(View v) {
         // Get entered address from text field
         String address = edit.getText().toString();
         //Store Application Context for easy referencing later
