@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         final Intent intent = new Intent(getApplicationContext(), WebPage.class);
         String address = edit.getText().toString();
         intent.putExtra(WebPage.ADDRESS, address);
-//        Bundle b = new Bundle();
+//        Bundle b = new Bundle(); ///
 //        b.putDouble("lat", LatAdd);
 //        b.putDouble("lng", LngAdd);
 //        intent.putExtras(b);
