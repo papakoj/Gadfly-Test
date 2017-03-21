@@ -11,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -22,17 +21,16 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    double LatAdd = 0;
-    double LngAdd = 0;
+    private double LatAdd = 0;
+    private double LngAdd = 0;
 
-    EditText edit;
-    Button submitbtn;
+    private EditText edit;
+
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        submitbtn = (Button) findViewById(R.id.submitButton);
         edit = (EditText) findViewById(R.id.addressfield);
 
         edit.setOnKeyListener(new View.OnKeyListener() {
@@ -52,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void getLocationFromAddress(String strAddress){
+    private void getLocationFromAddress(String strAddress){
         //Creates new geocoder object
         Geocoder coder = new Geocoder(this);
 
@@ -72,13 +70,12 @@ public class MainActivity extends AppCompatActivity {
             LatAdd = location.getLatitude();
             LngAdd = location.getLongitude();
         } else {
-            String fail = "Invalid Address.";
-            final Toast toast = Toast.makeText(getApplicationContext(), fail, Toast.LENGTH_LONG);
+            final Toast toast = Toast.makeText(getApplicationContext(), R.string.invalid_address, Toast.LENGTH_LONG);
             toast.show();
         }
     }
 
-    public void clickAction(View v) {
+    private void clickAction(View v) {
         // Get entered address from text field
         String address = edit.getText().toString();
         //Store Application Context for easy referencing later
@@ -108,11 +105,11 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtras(b);
                 startActivity(intent);
             } else {
-                toast = Toast.makeText(context, "No Internet Connection", Toast.LENGTH_LONG);
+                toast = Toast.makeText(context, R.string.no_internet, Toast.LENGTH_LONG);
                 toast.show();
             }
         } else {
-            final Toast toast = Toast.makeText(getApplicationContext(), "Please enter an address.", Toast.LENGTH_LONG);
+            final Toast toast = Toast.makeText(getApplicationContext(), R.string.ask_for_address, Toast.LENGTH_LONG);
             toast.show();
         }
     }
